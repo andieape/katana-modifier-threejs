@@ -102,6 +102,7 @@ body {
   animation: wheelin 1s 2s ease-in-out forwards; 
 }
 .tray__swatch {
+  cursor: pointer;
   transition: 0.1s ease-in;
   height: 50px;
   min-width: 50px;

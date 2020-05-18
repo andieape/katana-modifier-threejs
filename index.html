@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sword Model</title>
+  <meta name="description" content="3D Sword Model">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+  <style>
+    .loading {
+      position: fixed;
+      z-index: 50;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      background: #353535;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .loader{
+      -webkit-perspective: 120px;
+      -moz-perspective: 120px;
+      -ms-perspective: 120px;
+      perspective: 120px;
+      width: 100px;
+      height: 100px;
+    }
+    
+    .loader:before{
+      content: "";
+      position: absolute;
+      left: 25px;
+      top: 25px;
+      width: 50px;
+      height: 50px;
+      background-color: #dadada;
+      animation: flip 1s infinite;
+    }
+    
+    @keyframes flip {
+      0% {
+        transform: rotate(0);
+      }
+    
+      50% {
+        transform: rotateY(180deg);
+      }
+    
+      100% {
+        transform: rotateY(180deg)  rotateX(180deg);
+      }
+    }
+    </style>
+  
+</head>
+
+
+</head>
+
+<body>
+  <div class="loading" id="js-loader"><div class="loader"></div></div>
+
+  <span class="drag-notice" id="js-drag-notice">Drag to rotate</span>
+
+
+
+  <canvas id="c"></canvas>
+
+  <form>
+    <select id='pick-part' name='dropdown'>    
+      <option> Выбери часть меча </option>
+      
+    </select>
+ </form>
+
+  <div class="controls">
+    <div class="info">
+      <div class="info__message">
+          <p>Удерживайте <strong>&nbsp;левую кнопку мыши&nbsp;</strong> чтобы вращать меч.  </p>
+      </div>
+  </div>
+     <div id="js-tray" class="tray">
+         <div id="slide_metal" class="tray__slide hidden"></div>
+         <div id="slide_nonmetal" class="tray__slide"></div>
+     </div>
+    </div>
+
+  
+  
+  
+ 
+  
+  <script src="external-js/three.js"></script>
+  <script src="external-js/OrbitControls.js"></script>
+  
+  <script src="external-js/GLTFLoader.js"></script>
+  
+  <script src="./katanaParts.js"></script>
+  
+  <script src="./main.js"></script>
+  
+  
+</body>
+</html>

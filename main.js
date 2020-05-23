@@ -72,6 +72,7 @@ function init() {
     controls.addEventListener('change', renderer);
 
 //controls.update() must be called after any manual changes to the camera's transform
+controls.update()
     camera.position.set( 0, 0, 50 );
 
 
@@ -80,7 +81,10 @@ function init() {
 
 
     let loader = new THREE.GLTFLoader();
-    loader.load('models/katana/katana/katana-rr.gltf', function(obj) {
+   // loader.load('models/katana/katana/katana-rr.gltf', function(obj) {
+      loader.load('models/Katana_2e.gltf', function(obj) {
+        
+      
         katana = obj.scene.children[0];
         katana.scale.set(1, 1, 1);
         
@@ -127,7 +131,7 @@ PICKER.addEventListener('change', function() {
     var metalCols = document.getElementById('slide_metal');
     var nonmetalCols = document.getElementById('slide_nonmetal');
 
-    console.log(metalCheck)
+   
     
     if (metalCheck === "false"){        
         metalCols.classList.add('hidden');
@@ -147,7 +151,7 @@ PICKER.addEventListener('change', function() {
 
 
 function buildColors(colors) {
-    console.log(colors.length);
+    
     for (let [i, color] of colors.entries()) {
       let swatch = document.createElement('div');
       swatch.classList.add('tray__swatch');
@@ -204,24 +208,12 @@ function selectSwatch(e) {
 }
 
 function setMaterial(parent, type, new_clr) {
-    var also = null;
     
-    parent.traverse((o) => {
-        
+    
+    parent.traverse((o) => {        
       
-     if (o instanceof THREE.Mesh && o.name != null) {
-     
-       if (o.name == type) {
-           console.log(type)
-           if (type == 'handguard_low_Katana_0002'){
-            var also = scene.getObjectByName("metal_spacer_btm_low_Katana_0002"); 
-            console.log(also);
-           } else if (type == 'scabbard_sleve_low_Katana_0002'){
-            var also = scene.getObjectByName("metal_spacer_up_low_Katana_0002"); 
-           } else if (type == 'handle_low_Katana_0002'){
-            var also = scene.getObjectByName("handle_wrap_end_low_Katana_0002"); 
-           }
-
+     if (o instanceof THREE.Mesh && o.name != null) {      
+       if (o.name == type) {    
 
             var mtl = o.material.clone();
             mtl.color.setHex(new_clr);
@@ -229,10 +221,7 @@ function setMaterial(parent, type, new_clr) {
            
             mtl.blending = THREE.CustomBlending;
             o.material = mtl;
-            if (also){
-                also.material = mtl;
-            }
-            
+          
        
         }
      }
@@ -257,5 +246,3 @@ function setMaterial(parent, type, new_clr) {
     return needResize;
   }
 
-
- 

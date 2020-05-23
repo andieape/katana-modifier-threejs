@@ -1,36 +1,54 @@
 const colorsNonMetal = [
     {
-        color: 'DE300B'
+        color: 'FFFAFA'
     },
     {
-        color: '6CA11F'
+        color: '171717'
     },
     {
-        color: '1FA17C'
+        color: 'EE0000'
     },
     {
-        color: '1CE3DA'
+        color: '0300BD'
     },
     {
-        color: '1CA4E3'
+        color: '06CD31'
     },
     {
-        color: 'E6E613'
+        color: 'EFF70E'
     },
     {
-        color: '8313E6'
+        color: '13CDC7'
     },
     {
-        color: 'C913E6'
+        color: 'B5651D'
     },
     {
-        color: 'E61313'
+        color: '654321'
     },
     {
-        color: '626262'
+        color: '9E09BC'
     },
     {
-        color: '2ADF11'
+        color: '04720B'
+    },
+    {
+        color: '009С9С'
+    },
+    {
+        color: 'D4AF37'
+    },
+    {
+        color: '800000'
+    },
+    {
+        color: 'C5C9C7'
+    },
+    {
+        color: 'EDC9AF'
+    },
+    {
+        color: 'FFD8B1'
     },
     ]
 
@@ -53,42 +71,69 @@ const colorsNonMetal = [
     const parts = [
 
         {
-            part: 'handle_low_Katana_0002',
-            name: 'Цукаито',
+            part: 'Tsuka-ito',
+            name: 'Tsuka-ito',
             metal: false
         },    
         {
-            part: 'buttcap_low_Katana_0002',
-            name: 'Кашира',
+            part: 'Kashira',
+            name: 'Kashira',
             metal: true
         },
         {
-            part: 'handguard_low_Katana_0002',
-            name: 'Цуба',
+            part: 'Tsuba',
+            name: 'Tsuba',
             metal: true
         },
             
         {
-            part: 'metal_sleve_low_Katana_0002',
-            name: 'Фути',
+            part: 'Fuchi',
+            name: 'Fuchi',
             metal: true
         },
         
         {
-            part: 'sageo_wrap_low_Scabbard_0002',
-            name: 'Сагео',
+            part: 'Sage-o',
+            name: 'Sage-o',
             metal: false
         },
         {
-            part: 'scabbard_low_Scabbard_0002',
-            name: 'Коигучи',
+            part: 'Koikuchi',
+            name: 'Koikuchi',
             metal: true
         },
         {
-            part: 'scabbard_sleve_low_Katana_0002',
-            name: 'Хабаки',
+            part: 'Habaki',
+            name: 'Habaki',
+            metal: true
+        },
+        {
+            part: 'Same-gava',
+            name: 'Same-gava',
+            metal: false
+        },
+        {
+            part: 'Saya',
+            name: 'Saya',
+            metal: false
+        },
+        {
+            part: 'Kojiri',
+            name: 'Kojiri',
+            metal: true
+        },
+        {
+            part: 'Seppa',
+            name: 'Seppa',
+            metal: true
+        },
+        {
+            part: 'Kurigata',
+            name: 'Kurigata',
             metal: true
         }
+        
+        
 
         
     ]   

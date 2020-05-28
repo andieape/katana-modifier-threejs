@@ -21,7 +21,7 @@ function init() {
     camera.rotation.y = 45/180*Math.PI;
     camera.position.x = 0;
     camera.position.y = 0;
-    camera.position.z = 500;
+    camera.position.z = 50;
 
     
     
@@ -35,32 +35,37 @@ function init() {
     scene.add( hemiLight );
 
 
-    light1 = new THREE.PointLight(0xc4c4c4,1);
+    light1 = new THREE.PointLight(0xc4c4c4,0.5);
     light1.position.set(30,20,50);
-    scene.add(light1);
+     scene.add(light1);
 
-    light2 = new THREE.PointLight(0xc4c4c4,1);
+    light2 = new THREE.PointLight(0xc4c4c4,0.5);
     light2.position.set(-7,20,50);
     scene.add(light2);
 
-    light3 = new THREE.PointLight(0xc4c4c4,1);
+    light3 = new THREE.PointLight(0xc4c4c4,0.5);
     light3.position.set(30,-20,-50);
     scene.add(light3);
     
-    light4 = new THREE.PointLight(0xc4c4c4,1);
+    light4 = new THREE.PointLight(0xc4c4c4,0.5);
     light4.position.set(-7,20,-50);
     scene.add(light4);
 
-   
+    lightMove = new THREE.PointLight(0xc4c4c4,5,);
+   // lightMove.position.set(-7,20,-50);
+     
+    scene.add(lightMove);
 
 
-    lightFront = new THREE.DirectionalLight(0xc4c4c4, 1);
+/*
+   lightFront = new THREE.DirectionalLight(0xc4c4c4, 1);
     lightFront.position.set(0,12, 10);
+     
     scene.add(lightFront);
 
     lightBack = new THREE.DirectionalLight(0xc4c4c4, 1);
     lightBack.position.set(0,12, -10);
-    scene.add(lightBack);
+    scene.add(lightBack);*/
 
     
    
@@ -104,9 +109,11 @@ controls.update()
 }
 
 function animate() {
-
  
-  renderer.render(scene,camera);
+  renderer.render(scene,camera);  
+
+  lightMove.position.set(camera.position.x, camera.position.y, camera.position.z - 10)
+  console.log(lightMove.position);
   requestAnimationFrame(animate);
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;

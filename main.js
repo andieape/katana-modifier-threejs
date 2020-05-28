@@ -113,7 +113,7 @@ function animate() {
   renderer.render(scene,camera);  
 
   lightMove.position.set(camera.position.x, camera.position.y, camera.position.z - 10)
-  console.log(lightMove.position);
+  
   requestAnimationFrame(animate);
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;

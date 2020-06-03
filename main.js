@@ -12,6 +12,11 @@ const PICKER = document.getElementById('pick-part');
 var colors = colorsNonMetal;
 
 
+var katana;
+
+var hemiLight;
+
+
 function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(BACKGROUND_COLOR);
@@ -29,7 +34,7 @@ function init() {
     var light = new THREE.AmbientLight( 0x404040 ); // soft white light
     scene.add( light );
 
-    var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 5);
+    hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 5);
     hemiLight.position.set( 0, 10, 0 );
 
     scene.add( hemiLight );
@@ -57,6 +62,12 @@ function init() {
     scene.add(lightMove);
 
 
+
+/*
+    scene.add( spotLight1, spotLight2, spotLight3 );
+    scene.add( lightHelper1, lightHelper2, lightHelper3 );
+*/
+
 /*
    lightFront = new THREE.DirectionalLight(0xc4c4c4, 1);
     lightFront.position.set(0,12, 10);
@@ -77,7 +88,7 @@ function init() {
     controls.addEventListener('change', renderer);
 
 //controls.update() must be called after any manual changes to the camera's transform
-controls.update()
+    controls.update()
     camera.position.set( 0, 0, 50 );
 
 
@@ -86,12 +97,13 @@ controls.update()
 
 
     let loader = new THREE.GLTFLoader();
-   // loader.load('models/katana/katana/katana-rr.gltf', function(obj) {
-      loader.load('models/Katana_2e.gltf', function(obj) {
-        
+    loader.load('models/katanaNew/Katana_3e.gltf', function(obj) {
+    //  loader.load('models/Katana_2e.gltf', function(obj) {
+      
       
         katana = obj.scene.children[0];
         katana.scale.set(1, 1, 1);
+        katana.position.set(0, 0, 0);
         
         kataParts = katana.children[0].children[0].children[0];       
      
@@ -111,9 +123,12 @@ controls.update()
 function animate() {
  
   renderer.render(scene,camera);  
-
-  lightMove.position.set(camera.position.x, camera.position.y, camera.position.z - 10)
   
+  //lightMove
+  lightMove.position.set(camera.position.x, camera.position.y, camera.position.z -10)
+  lightMove.target = katana;  
+
+
   requestAnimationFrame(animate);
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;
@@ -220,8 +235,9 @@ function setMaterial(parent, type, new_clr) {
     parent.traverse((o) => {        
       
      if (o instanceof THREE.Mesh && o.name != null) {      
-       if (o.name == type) {    
-
+      console.log(o.name) 
+      if (o.name == type) {    
+          
             var mtl = o.material.clone();
             mtl.color.setHex(new_clr);
             mtl.metalness = 1;
@@ -252,4 +268,6 @@ function setMaterial(parent, type, new_clr) {
     }
     return needResize;
   }
+
+
 

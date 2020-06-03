@@ -54,7 +54,7 @@ const colorsNonMetal = [
 
     const colorsMetal = [
         {
-            color: '000000'
+            color: '303030'
         },
         {
             color: 'CD7F32'
@@ -78,6 +78,11 @@ const colorsNonMetal = [
         {
             part: 'Kashira',
             name: 'Kashira',
+            metal: true
+        },
+        {
+            part: 'Menuki',
+            name: 'Menuki',
             metal: true
         },
         {
@@ -132,7 +137,8 @@ const colorsNonMetal = [
             name: 'Kurigata',
             metal: true
         }
-        
+
+
         
 
         

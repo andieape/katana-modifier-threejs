@@ -14,41 +14,43 @@ const colorsNonMetal = [
     {
         color: '084F1A'
     },
-    {
-        color: 'EFF70E'
-    },
+    
     {
         color: '0A605E'
     },
     {
-        color: '6A1415'
+        color: '5C3529'
     },
     {
-        color: '654321'
+        color: '451F14'
     },
     {
-        color: '9E09BC'
+        color: '973202'
     },
     {
-        color: '04720B'
+        color: '8E0FF0'
     },
     {
-        color: '009С9С'
+        color: '4169E1'
+    },
+    
+    {
+        color: 'DAA520'
     },
     {
-        color: 'D4AF37'
+        color: '730000'
     },
     {
-        color: '800000'
-    },
-    {
-        color: 'C5C9C7'
+        color: 'C0C0C0'
     },
     {
         color: 'EDD9AF'
     },
     {
         color: 'FFDAB9'
+    },
+    {
+        color: 'E2B672'
     },
     ]
 

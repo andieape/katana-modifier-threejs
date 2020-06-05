@@ -57,13 +57,13 @@ const colorsNonMetal = [
             color: '303030'
         },
         {
-            color: 'CD7F32'
+            color: 'B3651E'
         },
         {
             color: 'C0C0C0'
         },
         {
-            color: 'D4AF37'
+            color: 'FFD700'
         },
 
     ]

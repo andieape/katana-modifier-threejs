@@ -35,51 +35,27 @@ function init() {
     scene.add( light );
 
     hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 5);
-    hemiLight.position.set( 0, 10, 0 );
+    hemiLight.position.set( 0, 15, 0 );  
 
     scene.add( hemiLight );
+    
 
-
-    light1 = new THREE.PointLight(0xc4c4c4,0.5);
-    light1.position.set(30,20,50);
+    light1 = new THREE.DirectionalLight(0xc4c4c4,1);
+    light1.position.set(10,3,20);
      scene.add(light1);
 
-    light2 = new THREE.PointLight(0xc4c4c4,0.5);
-    light2.position.set(-7,20,50);
+    light2 = new THREE.DirectionalLight(0xc4c4c4,1);
+    light2.position.set(-10,3,20);
     scene.add(light2);
 
-    light3 = new THREE.PointLight(0xc4c4c4,0.5);
-    light3.position.set(30,-20,-50);
+    light3 = new THREE.DirectionalLight(0xc4c4c4,1);
+    light3.position.set(10,3,-20);
     scene.add(light3);
     
-    light4 = new THREE.PointLight(0xc4c4c4,0.5);
-    light4.position.set(-7,20,-50);
+    light4 = new THREE.DirectionalLight(0xc4c4c4,1);
+    light4.position.set(-10,3,-20);
     scene.add(light4);
-
-    lightMove = new THREE.PointLight(0xc4c4c4,5,);
-   // lightMove.position.set(-7,20,-50);
-     
-    scene.add(lightMove);
-
-
-
-/*
-    scene.add( spotLight1, spotLight2, spotLight3 );
-    scene.add( lightHelper1, lightHelper2, lightHelper3 );
-*/
-
-/*
-   lightFront = new THREE.DirectionalLight(0xc4c4c4, 1);
-    lightFront.position.set(0,12, 10);
-     
-    scene.add(lightFront);
-
-    lightBack = new THREE.DirectionalLight(0xc4c4c4, 1);
-    lightBack.position.set(0,12, -10);
-    scene.add(lightBack);*/
-
-    
-   
+  
 
     renderer = new THREE.WebGLRenderer({canvas, antialias:true});
 
@@ -123,11 +99,7 @@ function init() {
 function animate() {
  
   renderer.render(scene,camera);  
-  
-  //lightMove
-  lightMove.position.set(camera.position.x, camera.position.y, camera.position.z -10)
-  lightMove.target = katana;  
-
+ 
 
   requestAnimationFrame(animate);
   if (resizeRendererToDisplaySize(renderer)) {

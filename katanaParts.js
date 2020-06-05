@@ -6,22 +6,22 @@ const colorsNonMetal = [
         color: '171717'
     },
     {
-        color: 'EE0000'
+        color: 'F50016'
     },
     {
-        color: '0300BD'
+        color: '00008F'
     },
     {
-        color: '06CD31'
+        color: '084F1A'
     },
     {
         color: 'EFF70E'
     },
     {
-        color: '13CDC7'
+        color: '0A605E'
     },
     {
-        color: 'B5651D'
+        color: '6A1415'
     },
     {
         color: '654321'
@@ -45,10 +45,10 @@ const colorsNonMetal = [
         color: 'C5C9C7'
     },
     {
-        color: 'EDC9AF'
+        color: 'EDD9AF'
     },
     {
-        color: 'FFD8B1'
+        color: 'FFDAB9'
     },
     ]
 
@@ -137,8 +137,6 @@ const colorsNonMetal = [
             name: 'Kurigata',
             metal: true
         }
-
-
         
 
         

@@ -3,14 +3,17 @@ const LOADER = document.getElementById('js-loader');
 const DRAG_NOTICE = document.getElementById('js-drag-notice');
 
 let scene;
+
+var wrapp = document.getElementById('wrapp');
+
 const canvas = document.querySelector('#c');
+
 const BACKGROUND_COLOR = 0x4f4f4f;
 
 var TRAY;
 const PICKER = document.getElementById('pick-part');
 
 var colors = colorsNonMetal;
-
 
 var katana;
 
@@ -26,10 +29,7 @@ function init() {
     camera.rotation.y = 45/180*Math.PI;
     camera.position.x = 0;
     camera.position.y = 0;
-    camera.position.z = 50;
-
-    
-    
+    camera.position.z = 50;    
     
     var light = new THREE.AmbientLight( 0x404040 ); // soft white light
     scene.add( light );
@@ -67,22 +67,18 @@ function init() {
     controls.update()
     camera.position.set( 0, 0, 50 );
 
-
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    wrapp.appendChild(renderer.domElement);
 
 
     let loader = new THREE.GLTFLoader();
-    loader.load('models/katanaNew/Katana_3e.gltf', function(obj) {
-    //  loader.load('models/Katana_2e.gltf', function(obj) {
-      
+    loader.load('models/katana/Katana_3e.gltf', function(obj) {
       
         katana = obj.scene.children[0];
         katana.scale.set(1, 1, 1);
         katana.position.set(0, 0, 0);
         
         kataParts = katana.children[0].children[0].children[0];       
-     
 
        scene.add(katana);
        LOADER.remove();
@@ -103,10 +99,12 @@ function animate() {
 
   requestAnimationFrame(animate);
   if (resizeRendererToDisplaySize(renderer)) {
+
     const canvas = renderer.domElement;
     camera.aspect = canvas.clientWidth / canvas.clientHeight;
     camera.updateProjectionMatrix();
   }
+
   if (katana != null && loaded == false) {
     
     DRAG_NOTICE.classList.add('start');
@@ -124,8 +122,6 @@ PICKER.addEventListener('change', function() {
     var metalCheck = PICKER[this.selectedIndex].getAttribute('metal');
     var metalCols = document.getElementById('slide_metal');
     var nonmetalCols = document.getElementById('slide_nonmetal');
-
-   
     
     if (metalCheck === "false"){        
         metalCols.classList.add('hidden');
@@ -228,8 +224,8 @@ function setMaterial(parent, type, new_clr) {
 
   function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
-    var width = window.innerWidth;
-    var height = window.innerHeight;
+    var width = wrapp.offsetWidth;
+    var height = wrapp.offsetHeight;
     var canvasPixelWidth = canvas.width / window.devicePixelRatio;
     var canvasPixelHeight = canvas.height / window.devicePixelRatio;
   

@@ -17,31 +17,58 @@ html {
   box-sizing: border-box;
 }
 body {
-  display: flex;
+  
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  position: fixed;
+  
   top: 0;
   left: 0;
   overflow: hidden;
+
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto !important;
+}
+
+.wrapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border: 2px solid #353535;
+  border-radius: 9px;
+
 }
 
  #c {
   width: 100%;
   height: 100%;
   display: block;
-  top: 0;
-  left: 0;
-  
+  top: 0px;
+  left: 0px;  
+
+}
+
+.wrapp form {
+  position: relative;
+  margin: 0 0px;
+  left: 1rem; 
+  bottom: 25rem;
+
 }
 
 
 .controls {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  bottom: 5%;
+  width: 90%;
 }
 .options {
   position: absolute;
@@ -115,9 +142,6 @@ body {
   border-radius: 9px;
 }
 
-
-
-
 #pick-part {
     left: 0;
     position: absolute;
@@ -159,11 +183,15 @@ body {
   background: #090909;
   position: absolute;
   border: 2px solid #dadada;
-  color: #dadada
+  color: #dadada;
+  margin: 0 auto
 }
 .drag-notice.start {
   animation: popout 0.25s 3s forwards;
 }
+
+
+
 @keyframes popout {
   to {
     transform: scale(0);

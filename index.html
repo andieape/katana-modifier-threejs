@@ -12,17 +12,21 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
-  <style>
+  <style>  
+
     .loading {
-      position: fixed;
+      
+      position: absolute;
       z-index: 50;
-      width: 100%;
-      height: 100%;
-      top: 0; left: 0;
+      width: 90% !important;
+      height: 90% !important;
       background: #353535;
       display: flex;
       justify-content: center;
       align-items: center;
+      border: 2px solid #353535;
+      border-radius: 9px;
+
     }
     
     .loader{
@@ -66,14 +70,17 @@
 </head>
 
 <body>
-  <div class="loading" id="js-loader"><div class="loader"></div></div>
+ 
+  <div class='wrapp' id='wrapp'>
 
-  <span class="drag-notice" id="js-drag-notice">Drag to rotate</span>
+    <div class="loading" id="js-loader"><div class="loader"></div></div>
 
+    <span class="drag-notice" id="js-drag-notice">Drag to rotate</span>
+    
 
-
+  
   <canvas id="c"></canvas>
-
+ 
   <form>
     <select id='pick-part' name='dropdown'>    
       <option> Choose a part of a sword </option>
@@ -84,7 +91,7 @@
   <div class="controls">
     <div class="info">
       <div class="info__message">
-          <p>Удерживайте <strong>&nbsp;левую кнопку мыши&nbsp;</strong> чтобы вращать меч.  </p>
+          <p><strong>&nbsp;Drag&nbsp;</strong> to rotate the sword.  </p>
       </div>
   </div>
      <div id="js-tray" class="tray">
@@ -92,6 +99,10 @@
          <div id="slide_nonmetal" class="tray__slide"></div>
      </div>
     </div>
+
+    </div>
+ 
+    
 
   
   
@@ -107,6 +118,10 @@
   <script src="./katanaParts.js"></script>
   
   <script src="./main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   
   
 </body>
